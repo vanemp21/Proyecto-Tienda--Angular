@@ -25,7 +25,7 @@
             <td>{{item.stock}}</td>
             <td>
                 <button type="button" class="btn btn-primary btn-sm" routerLink="/edit/{{item.id}}">Editar Producto</button>
-                <button type="button" class="btn btn-danger btn-sm ms-2">Borrar Producto</button>
+                <button (click)="deleteProduct(item.id!)" type="button" class="btn btn-danger btn-sm ms-2">Borrar Producto</button>
             </td>
           </tr>
          

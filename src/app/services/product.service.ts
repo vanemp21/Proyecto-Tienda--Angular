@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../environments/environment';
+
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../interfaces/product';
+import {environment} from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,8 @@ export class ProductService {
 
   getListProducts(): Observable<Product[]>{
     return this.http.get<Product[]>(`${this.myAppUrl}${this.myApiUrl}`)
+  }
+  deleteProduct(id:number): Observable<void>{
+    return this.http.delete<void>(`${this.myAppUrl}${this.myApiUrl}${id}`)
   }
 }
