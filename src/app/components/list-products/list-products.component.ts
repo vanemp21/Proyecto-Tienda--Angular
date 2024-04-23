@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from '../../interfaces/product';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-list-products',
@@ -15,4 +16,7 @@ listProducts:Product[]=[
   {id:1,name: 'Coca Cola', description: 'Bebida con azúcar',price:10,stock:200},
   {id:2,name: 'Monster', description: 'Bebida con gas',price:20,stock:100}
 ]
+constructor(private _productService:ProductService){
+  
+}
 }
