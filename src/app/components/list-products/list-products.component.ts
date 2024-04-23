@@ -16,7 +16,10 @@ import { ToastrService } from 'ngx-toastr';
 export class ListProductsComponent implements OnInit {
   loading: boolean = false;
   listProducts: Product[] = [];
-  constructor(private _productService: ProductService, private toastr: ToastrService) {}
+  constructor(
+    private _productService: ProductService,
+    private toastr: ToastrService
+  ) {}
   ngOnInit(): void {
     this.getListProducts();
   }
@@ -30,8 +33,12 @@ export class ListProductsComponent implements OnInit {
 
   deleteProduct(id: number) {
     this.loading = true;
-    this._productService.deleteProduct(id).subscribe(() => { this.getListProducts();});
-    this.toastr.warning('El producto fue eliminado con éxito', 'Producto eliminado');
-   
+    this._productService.deleteProduct(id).subscribe(() => {
+      this.getListProducts();
+    });
+    this.toastr.warning(
+      'El producto fue eliminado con éxito',
+      'Producto eliminado'
+    );
   }
 }

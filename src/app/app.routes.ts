@@ -3,8 +3,8 @@ import { ListProductsComponent } from './components/list-products/list-products.
 import { AddEditProductComponent } from './components/add-edit-product/add-edit-product.component';
 
 export const routes: Routes = [
-    {path:'',component: ListProductsComponent},
-    {path: 'add',component: AddEditProductComponent},
-    {path: 'edit/:id', component:AddEditProductComponent},
-    {path: '**', redirectTo: '', pathMatch:'full'}
+  { path: '', component: ListProductsComponent },
+  { path: 'add', component: AddEditProductComponent },
+  { path: 'edit/:id', component: AddEditProductComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

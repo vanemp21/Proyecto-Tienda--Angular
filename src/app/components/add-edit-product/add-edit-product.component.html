@@ -1,11 +1,11 @@
-<app-progress-bar *ngIf="loading"/>
+<app-progress-bar *ngIf="loading" />
 <div *ngIf="!loading" class="container mt-1">
   <div class="row">
     <div class="col-lg-4 offset-lg-4">
       <div class="card text-white bg-secondary mb-3" style="max-width: 20rem">
-        <div class="card-header text-center">{{operacion}} Producto</div>
+        <div class="card-header text-center">{{ operacion }} Producto</div>
         <div class="card-body">
-          <form [formGroup]='form' (ngSubmit)="addProduct()">
+          <form [formGroup]="form" (ngSubmit)="addProduct()">
             <input
               type="text"
               class="form-control mt-2"
@@ -14,7 +14,13 @@
               placeholder="Ingrese nombre"
               formControlName="name"
             />
-            <small *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">Error, el campo nombre es requerido</small>
+            <small
+              *ngIf="
+                form.get('name')?.hasError('required') &&
+                form.get('name')?.touched
+              "
+              >Error, el campo nombre es requerido</small
+            >
             <input
               type="text"
               class="form-control mt-2"
@@ -23,7 +29,13 @@
               placeholder="Ingrese descripción"
               formControlName="description"
             />
-            <small *ngIf="form.get('description')?.hasError('required') && form.get('description')?.touched">Error, el campo descripción es requerido</small>
+            <small
+              *ngIf="
+                form.get('description')?.hasError('required') &&
+                form.get('description')?.touched
+              "
+              >Error, el campo descripción es requerido</small
+            >
             <input
               type="number"
               class="form-control mt-2"
@@ -32,7 +44,13 @@
               placeholder="Ingrese precio"
               formControlName="price"
             />
-            <small *ngIf="form.get('price')?.hasError('required') && form.get('price')?.touched">Error, el campo precio es requerido</small>
+            <small
+              *ngIf="
+                form.get('price')?.hasError('required') &&
+                form.get('price')?.touched
+              "
+              >Error, el campo precio es requerido</small
+            >
             <input
               type="number"
               class="form-control mt-2"
@@ -41,13 +59,27 @@
               placeholder="Ingrese stock"
               formControlName="stock"
             />
-            <small *ngIf="form.get('stock')?.hasError('required') && form.get('stock')?.touched">Error, el campo stock es requerido</small>
+            <small
+              *ngIf="
+                form.get('stock')?.hasError('required') &&
+                form.get('stock')?.touched
+              "
+              >Error, el campo stock es requerido</small
+            >
             <div class="row mt-3 text-center">
               <div class="col-lg-6">
-                <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Aceptar</button>
+                <button
+                  [disabled]="form.invalid"
+                  type="submit"
+                  class="btn btn-primary"
+                >
+                  Aceptar
+                </button>
               </div>
               <div class="col-lg-6">
-                <button routerLink="/" type="button" class="btn btn-primary">Volver</button>
+                <button routerLink="/" type="button" class="btn btn-primary">
+                  Volver
+                </button>
               </div>
             </div>
           </form>
